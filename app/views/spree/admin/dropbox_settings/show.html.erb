@@ -1,0 +1,8 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+<h1><%= t('dropbox_settings') %></h1>
+<% if Spree::Config[:dropbox_user].present? %>
+  <p>Connected to Dropbox Account: <%= Spree::Config[:dropbox_user] %></p>
+  <p>Token: <%= Spree::Config[:dropbox_token] %></p>
+<% else %>
+  <%= link_to t('dropbox_connect'), admin_dropbox_settings_connect_path %>
+<% end %>
